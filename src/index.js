@@ -6,7 +6,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
 import { rootReducer } from "./reducers";
 
 import App from "./App";
-import "./styles/tailwind.css";
+import "./styles/app.css";
 
 const store = createStore(rootReducer, composeWithDevTools());
 const MainApp = () => {

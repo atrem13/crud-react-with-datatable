@@ -108,42 +108,46 @@ const App = () => {
   }, []);
 
   return (
-    <div className="ml-5">
-      <button type="button" onClick={() => setIsAdd(true)}>
-        Add Product
-      </button>
-      <DataList
-        columns={productColumns}
-        data={products || []}
-        onRowClick={(row) => {
-          setSelectedProduct(row.original);
-        }}
-      />
+    <div className="text-gray-400 body-font">
+      <div className="container px-5 py-24 mx-auto">
+        <div className="ml-5">
+          <button type="button" onClick={() => setIsAdd(true)} className="inline-flex text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded mb-5">
+            Add Product
+          </button>
+          <DataList
+            columns={productColumns}
+            data={products || []}
+            onRowClick={(row) => {
+              setSelectedProduct(row.original);
+            }}
+          />
 
-      <Modal title="Add Product" show={isAdd} onClose={() => setIsAdd(false)}>
-        <ProductForm
-          onCancel={() => setIsAdd(false)}
-          onSubmit={(values) => {
-            createProduct(values);
-            setIsAdd(false);
-          }}
-        />
-      </Modal>
+          <Modal title="Add Product" show={isAdd} onClose={() => setIsAdd(false)}>
+            <ProductForm
+              onCancel={() => setIsAdd(false)}
+              onSubmit={(values) => {
+                createProduct(values);
+                setIsAdd(false);
+              }}
+            />
+          </Modal>
 
-      <Modal
-        title="Edit Product"
-        show={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
-      >
-        <ProductForm
-          initialValue={selectedProduct}
-          onCancel={() => setSelectedProduct(null)}
-          onSubmit={(values) => {
-            updateProduct(selectedProduct.id, values);
-            setSelectedProduct(null);
-          }}
-        />
-      </Modal>
+          <Modal
+            title="Edit Product"
+            show={selectedProduct}
+            onClose={() => setSelectedProduct(null)}
+          >
+            <ProductForm
+              initialValue={selectedProduct}
+              onCancel={() => setSelectedProduct(null)}
+              onSubmit={(values) => {
+                updateProduct(selectedProduct.id, values);
+                setSelectedProduct(null);
+              }}
+            />
+          </Modal>
+        </div>
+      </div>
     </div>
   );
 };

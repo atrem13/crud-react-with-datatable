@@ -105,6 +105,7 @@ const DataList = (props) => {
   return (
     <div>
       <Table
+        className="table-auto w-full text-left whitespace-no-wrap"
         cellSpacing="0"
         cellPadding="24px"
         width="100%"
@@ -114,7 +115,7 @@ const DataList = (props) => {
           {headerGroups.map((headerGroup) => (
             <StyledTableHeaderRow {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
-                <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                <th {...column.getHeaderProps(column.getSortByToggleProps())} className="px-4 py-3 title-font tracking-wider font-medium text-white text-sm bg-gray-800 ">
                   <div className="flex items-center">
                     <div className="select-none whitespace-nowrap">
                       {column.render("Header")}
