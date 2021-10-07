@@ -4,6 +4,7 @@ import { Provider as ReduxProvider } from "react-redux";
 import { createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { rootReducer } from "./reducers";
+import Swal from 'sweetalert2';
 
 import App from "./App";
 import "./styles/app.css";
