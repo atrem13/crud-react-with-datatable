@@ -59,7 +59,7 @@ const Modal = (props) => {
             {!!title && <h1>{title}</h1>}
 
             {onClose && (
-              <button className="ml-auto -mt-2" onClick={() => onClose()}>
+              <button className="bg-red-500 p-1 rounded text-white ml-auto -mt-2" onClick={() => onClose()}>
                 <IoClose size={22} />
               </button>
             )}

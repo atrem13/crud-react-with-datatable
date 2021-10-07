@@ -63,7 +63,7 @@ const App = () => {
       Header: "Amount",
       accessor: "amount",
       Cell: ({ row }) => {
-        return "SOmething";
+        return "Something";
       }
     },
     {
@@ -111,9 +111,11 @@ const App = () => {
     <div className="text-gray-400 body-font">
       <div className="container px-5 py-24 mx-auto">
         <div className="ml-5">
-          <button type="button" onClick={() => setIsAdd(true)} className="inline-flex text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded mb-5">
-            Add Product
-          </button>
+          <div className="row">
+            <div className="col-12 text-right">
+              <button type="button" onClick={() => setIsAdd(true)} className="inline-flex text-white bg-blue-500 border-0 py-1 px-4 focus:outline-none hover:bg-blue-600 rounded mb-5">Add Product</button>
+            </div>
+          </div>
           <DataList
             columns={productColumns}
             data={products || []}

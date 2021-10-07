@@ -46,7 +46,7 @@ const StyledTableHeaderRow = styled("tr")`
 const TableRow = styled("tr")`
   cursor: pointer;
   :nth-child(even) {
-    background: #faf5ec;
+    background: #ebeff2;
   }
 `;
 
@@ -62,7 +62,7 @@ const SortIndicator = (props) => {
       <IoCaretUp
         style={{
           fontSize: 12,
-          color: "#303E46",
+          color: "#fff",
           marginTop: 2,
           opacity: isAsc ? 1 : 0.2
         }}
@@ -70,7 +70,7 @@ const SortIndicator = (props) => {
       <IoCaretDown
         style={{
           fontSize: 12,
-          color: "#303E46",
+          color: "#fff",
           marginTop: -5,
           opacity: isDesc ? 1 : 0.2
         }}
@@ -105,7 +105,7 @@ const DataList = (props) => {
   return (
     <div>
       <Table
-        className="table-auto w-full text-left whitespace-no-wrap"
+        className="table-auto w-full text-left text-black whitespace-no-wrap"
         cellSpacing="0"
         cellPadding="24px"
         width="100%"
@@ -130,7 +130,7 @@ const DataList = (props) => {
         <tbody {...getTableBodyProps()}>
           {rows.length === 0 && (
             <TableRow>
-              <td colSpan={columns.length} align="center">
+              <td className="px-4 py-3" colSpan={columns.length} align="center">
                 <span className="font-bold">No Result Found</span>
               </td>
             </TableRow>
@@ -144,7 +144,7 @@ const DataList = (props) => {
               >
                 {row.cells.map((cell) => {
                   return (
-                    <td valign="top" {...cell.getCellProps()}>
+                    <td className="px-4 py-3" valign="top" {...cell.getCellProps()}>
                       {cell.render("Cell")}
                     </td>
                   );
